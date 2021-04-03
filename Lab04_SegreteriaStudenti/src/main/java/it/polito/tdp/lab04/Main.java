@@ -2,7 +2,7 @@ package it.polito.tdp.lab04;
 
 /********** DA FARE ***************
  * 1. ISCRIZIONE nel DAO
- * 2. non appaiono le righe
+ * 2. come incolonnare???
  * 
  * @author elena
  *
