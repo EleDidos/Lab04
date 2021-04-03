@@ -18,11 +18,11 @@ public class Model {
 		for( Corso ci: DAO.getTuttiICorsi())
 			corsiString.add(ci.getNome());
 		//aggiungo riga vuota
-		corsiString.add("-");
+		corsiString.add("");
 		return corsiString;
 	}
 
-	public String[] compila(Integer matricola) {
+	public String[] compila(int matricola) {
 		return this.DAO.getNC(matricola);
 	}
 

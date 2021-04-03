@@ -42,7 +42,7 @@ public class FXMLController {
     	
 	    	// CONTROLLO DELL'INPUT
 	    	String matricolaInserita = txtMatricola.getText();
-	    	Integer matricola;
+	    	int matricola;
 	    	try {
 	    		matricola = Integer.parseInt(matricolaInserita);
 	    	}catch (NumberFormatException ne) {
@@ -110,6 +110,8 @@ public class FXMLController {
   
     	try {
     		corsoScelto=boxCorsi.getValue(); //NOME del corso
+    		if(corsoScelto.equals(""))
+    			throw new NullPointerException();
     	}catch (NullPointerException npe) { //se campo è nullo
     		txtResult.setText("Devi selezionare un corso tra quelli proposti");
     		return;

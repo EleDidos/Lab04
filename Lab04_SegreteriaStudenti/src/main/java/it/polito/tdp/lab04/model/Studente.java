@@ -39,7 +39,7 @@ public class Studente {
 	}
 	
 	public String toString() {
-		return matricola+"		"+nome+"			"+cognome+"			"+CDS;
+		return matricola+"\t\t"+nome+"\t\t\t\t"+cognome+"\t\t"+CDS;
 	}
 
 }

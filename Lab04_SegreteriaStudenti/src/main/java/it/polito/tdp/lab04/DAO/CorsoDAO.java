@@ -50,7 +50,7 @@ public class CorsoDAO {
 	 * per compilare automaticamente 
 	 * @param corso
 	 */
-	public String[] getNC (Integer i) {
+	public String[] getNC (int i) {
 		String [] NC = new String[2];
 		String nome = "";
 		String cognome = "";
@@ -180,6 +180,18 @@ public class CorsoDAO {
 		
 		if(iscritto==false) { //non e' ancora iscritto
 			/********************* AGGIUNGERE UN RECORD DI ISCRIZIONE **********/
+			final String sql2 = "INSERT INTO iscrizione VALUES ('?','(SELECT codins FROM corso WHERE nome=?)') ";
+			
+			try {
+				Connection conn = ConnectDB.getConnection();
+				PreparedStatement st = conn.prepareStatement(sql2);
+				st.setString(2, nomeCorso); //passo il nome corso alla query
+				st.setInt(1, matricola); //passo la matricola
+
+				conn.close();
+			} catch (SQLException e) {
+				throw new RuntimeException("Errore DB", e);
+			}
 			return false;
 		} else
 			return true;
